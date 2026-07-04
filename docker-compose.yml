@@ -1,18 +1,169 @@
-version: "3.9"
-
 services:
-  frontend:
-    build:
-      context: ./frontend
-
-    container_name: saas-frontend
-
+  nginx:
+    image: nginx:alpine
+    container_name: nginx-gateway
     ports:
-      - "5173:5173"
-
+      - "8080:80"
     volumes:
-      - ./frontend:/app
-      - /app/node_modules
+      - ./gateway/nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - auth-service
+      - user-service
+      - workspace-service
+      - project-service
+      - task-service
+      - notification-service
 
-    stdin_open: true
-    tty: true
+  auth-service:
+    build: ./services/auth-service
+    container_name: auth-service
+    ports:
+      - "8081:8080"
+    environment:
+      DB_HOST: auth-db
+      DB_NAME: auth_db
+      DB_USER: root
+      DB_PASSWORD: root
+    depends_on:
+      - auth-db
+
+  auth-db:
+    image: mysql:8
+    container_name: auth-db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: auth_db
+    ports:
+      - "3307:3306"
+    volumes:
+      - auth_data:/var/lib/mysql
+
+  user-service:
+    build: ./services/user-service
+    container_name: user-service
+    ports:
+      - "8082:8080"
+    environment:
+      DB_HOST: user-db
+      DB_NAME: user_db
+      DB_USER: root
+      DB_PASSWORD: root
+    depends_on:
+      - user-db
+
+  user-db:
+    image: mysql:8
+    container_name: user-db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: user_db
+    ports:
+      - "3308:3306"
+    volumes:
+      - user_data:/var/lib/mysql
+
+  workspace-service:
+    build: ./services/workspace-service
+    container_name: workspace-service
+    ports:
+      - "8083:8000"
+    environment:
+      DATABASE_URL: mysql://root:root@workspace-db:3306/workspace_db
+    depends_on:
+      - workspace-db
+
+  workspace-db:
+    image: mysql:8
+    container_name: workspace-db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: workspace_db
+    ports:
+      - "3309:3306"
+    volumes:
+      - workspace_data:/var/lib/mysql
+
+  project-service:
+    build: ./services/project-service
+    container_name: project-service
+    ports:
+      - "8084:8080"
+    environment:
+      DB_HOST: project-db
+      DB_NAME: project_db
+      DB_USER: root
+      DB_PASSWORD: root
+    depends_on:
+      - project-db
+
+  project-db:
+    image: mysql:8
+    container_name: project-db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: project_db
+    ports:
+      - "3310:3306"
+    volumes:
+      - project_data:/var/lib/mysql
+
+  task-service:
+    build: ./services/task-service
+    container_name: task-service
+    ports:
+      - "8085:8000"
+    environment:
+      DATABASE_URL: mysql://root:root@task-db:3306/task_db
+    depends_on:
+      - task-db
+
+  task-db:
+    image: mysql:8
+    container_name: task-db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: task_db
+    ports:
+      - "3311:3306"
+    volumes:
+      - task_data:/var/lib/mysql
+
+  notification-service:
+    build: ./services/notification-service
+    container_name: notification-service
+    ports:
+      - "8086:8080"
+    environment:
+      DB_HOST: notification-db
+      DB_NAME: notification_db
+      DB_USER: root
+      DB_PASSWORD: root
+    depends_on:
+      - notification-db
+
+  notification-db:
+    image: mysql:8
+    container_name: notification-db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: notification_db
+    ports:
+      - "3312:3306"
+    volumes:
+      - notification_data:/var/lib/mysql
+
+  frontend:
+    build: ./frontend
+    container_name: react-frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - nginx
+
+volumes:
+  auth_data:
+  user_data:
+  workspace_data:
+  project_data:
+  task_data:
+  notification_data:
