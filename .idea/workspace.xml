@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b10a87c4-175f-4c48-9501-088f4032f981" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/services/project-service/.dockerignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/project-service/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/project-service/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/project-service/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/project-service/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/project-service/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/project-service/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/project-service/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/project-service/src/main/java/com/saas/projectservice/ProjectServiceApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/project-service/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/project-service/src/test/java/com/saas/projectservice/ProjectServiceApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/workspace-service/.dockerignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/workspace-service/.editorconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/workspace-service/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/workspace-service/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/workspace-service/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/workspace-service/bin/console" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/workspace-service/composer.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/workspace-service/composer.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/workspace-service/config/bundles.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/workspace-service/config/packages/api_platform.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/workspace-service/config/packages/cache.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/workspace-service/config/packages/doctrine.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/workspace-service/config/packages/doctrine_migrations.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/workspace-service/config/packages/framework.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/workspace-service/config/packages/nelmio_cors.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/workspace-service/config/packages/property_info.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/workspace-service/config/packages/routing.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/workspace-service/config/packages/security.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/workspace-service/config/packages/twig.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/workspace-service/config/packages/validator.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/workspace-service/config/preload.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/workspace-service/config/reference.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/workspace-service/config/routes.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/workspace-service/config/routes/api_platform.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/workspace-service/config/routes/framework.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/workspace-service/config/routes/security.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/workspace-service/config/services.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/workspace-service/docker/nginx.conf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/workspace-service/migrations/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/workspace-service/public/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/workspace-service/src/ApiResource/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/workspace-service/src/Controller/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/workspace-service/src/Entity/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/workspace-service/src/Kernel.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/workspace-service/src/Repository/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/workspace-service/symfony.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/workspace-service/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/user-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/services/user-service/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/user-service/obj/Debug/net9.0/user-service.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/services/user-service/obj/Debug/net9.0/user-service.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/user-service/obj/Debug/net9.0/user-service.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/services/user-service/obj/Debug/net9.0/user-service.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/user-service/obj/Debug/net9.0/user-service.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/services/user-service/obj/Debug/net9.0/user-service.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/user-service/obj/Debug/net9.0/user-service.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/services/user-service/obj/Debug/net9.0/user-service.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/user-service/obj/Debug/net9.0/user-service.csproj.AssemblyReference.cache" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Dockerfile" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="3G3wAdPhmbXKP4wUC2buBV1TRrW" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.ProjectServiceApplication (1).executor": "Run",
+    "Application.ProjectServiceApplication.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/malik/source/repos/saas-project-management",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2735632",
+    "settings.editor.selected.configurable": "MavenSettings"
+  }
+}]]></component>
+  <component name="RunManager" selected="Application.ProjectServiceApplication (1)">
+    <configuration name="ProjectServiceApplication (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.saas.projectservice.ProjectServiceApplication" />
+      <module name="project-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.saas.projectservice.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProjectServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.saas.projectservice.ProjectServiceApplication" />
+      <module name="saas-project-management" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.saas.projectservice.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.ProjectServiceApplication (1)" />
+        <item itemvalue="Application.ProjectServiceApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.28238.7" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b10a87c4-175f-4c48-9501-088f4032f981" name="Changes" comment="" />
+      <created>1783213420896</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1783213420896</updated>
+    </task>
+    <servers />
+  </component>
+</project>
