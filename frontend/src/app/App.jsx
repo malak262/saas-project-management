@@ -1,9 +1,7 @@
+import Router from "./router";
+
 function App() {
-    return (
-        <div>
-            <h1>SaaS Project z</h1>
-        </div>
-    );
+    return <Router />;
 }
 
 export default App;

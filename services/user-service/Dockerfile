@@ -13,4 +13,4 @@ COPY --from=build /app/out .
 
 EXPOSE 8080
 
-ENTRYPOINT ["dotnet", "UserService.dll"]
+ENTRYPOINT ["dotnet", "user-service.dll"]

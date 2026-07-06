@@ -22,8 +22,8 @@ services:
     environment:
       DB_HOST: auth-db
       DB_NAME: auth_db
-      DB_USER: root
-      DB_PASSWORD: root
+      DB_USER: saas
+      DB_PASSWORD: saas
     depends_on:
       - auth-db
 
@@ -31,8 +31,10 @@ services:
     image: mysql:8
     container_name: auth-db
     environment:
-      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: saas
       MYSQL_DATABASE: auth_db
+      MYSQL_USER: saas
+      MYSQL_PASSWORD: saas
     ports:
       - "3307:3306"
     volumes:
@@ -46,8 +48,8 @@ services:
     environment:
       DB_HOST: user-db
       DB_NAME: user_db
-      DB_USER: root
-      DB_PASSWORD: root
+      DB_USER: saas
+      DB_PASSWORD: saas
     depends_on:
       - user-db
 
@@ -55,8 +57,10 @@ services:
     image: mysql:8
     container_name: user-db
     environment:
-      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: saas
       MYSQL_DATABASE: user_db
+      MYSQL_USER: saas
+      MYSQL_PASSWORD: saas
     ports:
       - "3308:3306"
     volumes:
@@ -68,7 +72,7 @@ services:
     ports:
       - "8083:8000"
     environment:
-      DATABASE_URL: mysql://root:root@workspace-db:3306/workspace_db
+      DATABASE_URL: mysql://saas:saas@workspace-db:3306/workspace_db
     depends_on:
       - workspace-db
 
@@ -76,8 +80,10 @@ services:
     image: mysql:8
     container_name: workspace-db
     environment:
-      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: saas
       MYSQL_DATABASE: workspace_db
+      MYSQL_USER: saas
+      MYSQL_PASSWORD: saas
     ports:
       - "3309:3306"
     volumes:
@@ -91,8 +97,8 @@ services:
     environment:
       DB_HOST: project-db
       DB_NAME: project_db
-      DB_USER: root
-      DB_PASSWORD: root
+      DB_USER: saas
+      DB_PASSWORD: saas
     depends_on:
       - project-db
 
@@ -100,8 +106,10 @@ services:
     image: mysql:8
     container_name: project-db
     environment:
-      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: saas
       MYSQL_DATABASE: project_db
+      MYSQL_USER: saas
+      MYSQL_PASSWORD: saas
     ports:
       - "3310:3306"
     volumes:
@@ -113,7 +121,7 @@ services:
     ports:
       - "8085:8000"
     environment:
-      DATABASE_URL: mysql://root:root@task-db:3306/task_db
+      DATABASE_URL: mysql://saas:saas@task-db:3306/task_db
     depends_on:
       - task-db
 
@@ -121,8 +129,10 @@ services:
     image: mysql:8
     container_name: task-db
     environment:
-      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: saas
       MYSQL_DATABASE: task_db
+      MYSQL_USER: saas
+      MYSQL_PASSWORD: saas
     ports:
       - "3311:3306"
     volumes:
@@ -136,8 +146,8 @@ services:
     environment:
       DB_HOST: notification-db
       DB_NAME: notification_db
-      DB_USER: root
-      DB_PASSWORD: root
+      DB_USER: saas
+      DB_PASSWORD: saas
     depends_on:
       - notification-db
 
@@ -145,8 +155,10 @@ services:
     image: mysql:8
     container_name: notification-db
     environment:
-      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: saas
       MYSQL_DATABASE: notification_db
+      MYSQL_USER: saas
+      MYSQL_PASSWORD: saas
     ports:
       - "3312:3306"
     volumes:
