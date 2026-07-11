@@ -69,13 +69,25 @@ services:
   workspace-service:
     build: ./services/workspace-service
     container_name: workspace-service
-    ports:
-      - "8083:8000"
+    expose:
+    - "9000"
     environment:
       DATABASE_URL: mysql://saas:saas@workspace-db:3306/workspace_db
     depends_on:
       - workspace-db
+  workspace-nginx:
+      image: nginx:alpine
+      container_name: workspace-nginx
 
+      ports:
+        - "8083:80"
+
+      volumes:
+        - ./services/workspace-service:/var/www/html
+        - ./services/workspace-service/docker/nginx.conf:/etc/nginx/conf.d/default.conf
+
+      depends_on:
+        - workspace-service
   workspace-db:
     image: mysql:8
     container_name: workspace-db

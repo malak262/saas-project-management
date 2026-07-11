@@ -1,5 +1,20 @@
-.vs/
+# IntelliJ
+.idea/
+
+# .NET
+bin/
+obj/
+
+# Java
+target/
+
+# Symfony
+vendor/
+var/
+
+# Node
 node_modules/
-dist/
+
 .env
-*.log
+
+.vs/
