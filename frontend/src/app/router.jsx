@@ -1,107 +1,77 @@
-import { BrowserRouter, NavLink, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-const navItems = [
-    { to: "/", label: "Dashboard" },
-    { to: "/users", label: "Users" },
-    { to: "/workspaces", label: "Workspaces" },
-    { to: "/projects", label: "Projects" },
-    { to: "/tasks", label: "Tasks" },
-    { to: "/notifications", label: "Notifications" },
-];
+import Layout from "../shared/components/Layout";
+import WorkspaceList from "../features/workspace/pages/WorkspaceList";
+import CreateWorkspace from "../features/workspace/pages/CreateWorkspace";
+import WorkspaceDetails from "../features/workspace/pages/WorkspaceDetails";
+import EditWorkspacePage from "../features/workspace/pages/EditWorkspacePage";
+import ProjectListPage from "../features/project/pages/ProjectListPage";
+import CreateProjectPage from "../features/project/pages/CreateProjectPage";
+import ProjectDetailsPage from "../features/project/pages/ProjectDetailsPage";
+import EditProjectPage from "../features/project/pages/EditProjectPage";
+function Dashboard() {
+    return <h1 className="text-3xl font-bold">Dashboard</h1>;
+}
 
-function Section({ title, description }) {
-    return (
-        <section className="page-card">
-            <h2>{title}</h2>
-            <p>{description}</p>
-        </section>
-    );
+function Tasks() {
+    return <h1 className="text-3xl font-bold">Tasks</h1>;
+}
+
+function Notifications() {
+    return <h1 className="text-3xl font-bold">Notifications</h1>;
 }
 
 export default function Router() {
     return (
         <BrowserRouter>
-            <div className="shell">
-                <header className="topbar">
-                    <div>
-                        <p className="eyebrow">SaaS Project Management</p>
-                        <h1>Operations Console</h1>
-                    </div>
-                    <nav className="nav">
-                        {navItems.map((item) => (
-                            <NavLink
-                                key={item.to}
-                                to={item.to}
-                                end={item.to === "/"}
-                                className={({ isActive }) =>
-                                    `nav-link${isActive ? " active" : ""}`
-                                }
-                            >
-                                {item.label}
-                            </NavLink>
-                        ))}
-                    </nav>
-                </header>
 
-                <main className="content">
-                    <Routes>
-                        <Route
-                            path="/"
-                            element={
-                                <Section
-                                    title="Dashboard"
-                                    description="Overview of the platform, service health, and recent activity."
-                                />
-                            }
-                        />
-                        <Route
-                            path="/users"
-                            element={
-                                <Section
-                                    title="Users"
-                                    description="Manage application users and access to the platform."
-                                />
-                            }
-                        />
-                        <Route
-                            path="/workspaces"
-                            element={
-                                <Section
-                                    title="Workspaces"
-                                    description="Track workspace-level organization and ownership."
-                                />
-                            }
-                        />
-                        <Route
-                            path="/projects"
-                            element={
-                                <Section
-                                    title="Projects"
-                                    description="View project pipelines and delivery status."
-                                />
-                            }
-                        />
-                        <Route
-                            path="/tasks"
-                            element={
-                                <Section
-                                    title="Tasks"
-                                    description="Follow task progress across active workstreams."
-                                />
-                            }
-                        />
-                        <Route
-                            path="/notifications"
-                            element={
-                                <Section
-                                    title="Notifications"
-                                    description="Monitor system alerts and user notifications."
-                                />
-                            }
-                        />
-                    </Routes>
-                </main>
-            </div>
+            <Routes>
+
+                <Route path="/" element={<Layout />}>
+
+                    <Route index element={<Dashboard />} />
+
+                    <Route
+                        path="workspaces"
+                        element={<WorkspaceList />}
+                    />
+
+                    <Route path="projects" element={<ProjectListPage />} />
+                    <Route path="projects/create" element={<CreateProjectPage />} />
+                    <Route path="projects/:id" element={<ProjectDetailsPage />} />
+                    <Route path="projects/:id/edit" element={<EditProjectPage />} />
+
+                    <Route
+                        path="tasks"
+                        element={<Tasks />}
+                    />
+
+                    <Route
+                        path="notifications"
+                        element={<Notifications />}
+                    />
+                    <Route
+                        path="workspaces/create"
+                        element={<CreateWorkspace />}
+                    />
+                    <Route
+
+                        path="workspaces/:id"
+
+                        element={<WorkspaceDetails/>}
+
+                    /> 
+                    <Route
+
+                        path="workspaces/:id/edit"
+
+                        element={<EditWorkspacePage />}
+
+                    />            
+                </Route>
+
+            </Routes>
+
         </BrowserRouter>
     );
 }

@@ -5,25 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b10a87c4-175f-4c48-9501-088f4032f981" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/auth-service/src/main/java/com/example/demo/controller/AuthController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/project-service/src/main/java/com/saas/projectservice/controller/ProjectController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/task-service/src/Controller/TaskController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/workspace-service/src/Controller/WorkspaceController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/project-service/Preparation/src/Developper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/project-service/Preparation/src/Project.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/project-service/Preparation/src/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/workspace-service/src/Enum/WorkspaceRole.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/router.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/router.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/vite.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/vite.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gateway/nginx.conf" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/nginx.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/notification-service/obj/Debug/net9.0/NotificationService.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/services/notification-service/obj/Debug/net9.0/NotificationService.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/notification-service/obj/Debug/net9.0/NotificationService.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/services/notification-service/obj/Debug/net9.0/NotificationService.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/notification-service/obj/Release/net9.0/NotificationService.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/services/notification-service/obj/Release/net9.0/NotificationService.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/notification-service/obj/Release/net9.0/NotificationService.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/services/notification-service/obj/Release/net9.0/NotificationService.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/project-service/src/main/java/com/saas/projectservice/controller/ProjectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/project-service/src/main/java/com/saas/projectservice/controller/ProjectController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/project-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/services/project-service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/task-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/services/task-service/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/user-service/obj/Debug/net9.0/user-service.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/services/user-service/obj/Debug/net9.0/user-service.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/user-service/obj/Debug/net9.0/user-service.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/services/user-service/obj/Debug/net9.0/user-service.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/user-service/obj/Release/net9.0/user-service.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/services/user-service/obj/Release/net9.0/user-service.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/user-service/obj/Release/net9.0/user-service.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/services/user-service/obj/Release/net9.0/user-service.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/workspace-service/config/reference.php" beforeDir="false" afterPath="$PROJECT_DIR$/services/workspace-service/config/reference.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/workspace-service/src/Controller/WorkspaceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/services/workspace-service/src/Controller/WorkspaceController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +41,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;malak262&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/malak262/saas-project-management.git&quot;,
+    &quot;accountId&quot;: &quot;2a2c4701-1cea-4105-8006-5661927c0904&quot;
+  }
+}</component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -130,10 +139,22 @@
       <option name="presentableId" value="Default" />
       <updated>1783213420896</updated>
       <workItem from="1783732949799" duration="2002000" />
+      <workItem from="1784499765355" duration="59000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

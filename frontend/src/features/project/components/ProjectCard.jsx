@@ -1,0 +1,4 @@
+import { Link } from "react-router-dom";
+export default function ProjectCard({ project }) {
+    return <article className="flex min-h-56 flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"><div className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-50 font-bold text-blue-700">{project.name?.charAt(0)?.toUpperCase() || "P"}</div><h2 className="mt-5 truncate text-lg font-semibold text-slate-900">{project.name}</h2><p className="mt-2 line-clamp-2 text-sm leading-6 text-slate-500">{project.description || "Aucune description."}</p><p className="mt-4 text-sm text-slate-600">Workspace #{project.workspaceId}</p><Link to={`/projects/${project.id}`} className="mt-auto inline-flex w-fit items-center gap-2 rounded-xl bg-blue-50 px-4 py-2.5 pt-2.5 text-sm font-semibold text-blue-700 transition hover:bg-blue-100">Ouvrir <span aria-hidden="true">→</span></Link></article>;
+}

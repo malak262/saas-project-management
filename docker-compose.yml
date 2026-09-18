@@ -9,7 +9,7 @@ services:
     depends_on:
       - auth-service
       - user-service
-      - workspace-service
+      - workspace-nginx
       - project-service
       - task-service
       - notification-service
