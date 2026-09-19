@@ -13,7 +13,23 @@ services:
       - project-service
       - task-service
       - notification-service
-
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: phpmyadmin
+    ports:
+      - "8087:80"
+    environment:
+      PMA_HOSTS: auth-db,user-db,workspace-db,project-db,task-db,notification-db
+      PMA_PORTS: 3306,3306,3306,3306,3306,3306
+      PMA_USER: saas
+      PMA_PASSWORD: saas
+    depends_on:
+      - auth-db
+      - user-db
+      - workspace-db
+      - project-db
+      - task-db
+      - notification-db
   auth-service:
     build: ./services/auth-service
     container_name: auth-service
