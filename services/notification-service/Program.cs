@@ -1,12 +1,20 @@
-var builder = WebApplication.CreateBuilder(args);
-
-builder.Services.AddControllers();
-
-
-var app = builder.Build();
-
-app.UseRouting();
-
-app.MapControllers();
-
+using System.Security.Claims;
+using Dapper;
+using Teamflow;
+using static Teamflow.Infrastructure;
+var builder=WebApplication.CreateBuilder(args).Teamflow();var app=builder.Build();app.Teamflow();
+await Schema("CREATE TABLE IF NOT EXISTS notifications (id BIGINT AUTO_INCREMENT PRIMARY KEY,event_id VARCHAR(100) NOT NULL UNIQUE,user_id BIGINT NOT NULL,title VARCHAR(200) NOT NULL,message VARCHAR(500) NOT NULL,link VARCHAR(200) NOT NULL,is_read BOOLEAN NOT NULL DEFAULT FALSE,created_at VARCHAR(40) NOT NULL,INDEX(user_id,is_read))");
+const string fields="id AS Id,user_id AS UserId,title AS Title,message AS Message,link AS Link,is_read AS IsRead,created_at AS CreatedAt";
+app.MapPost("/internal/notifications",async(NotificationInput input)=>{
+ if(input.UserId<1)throw new ApiError(422,"A recipient is required.");var eventId=Text(input.EventId,"Event ID",100,true);var title=Text(input.Title,"Title",200,true);var message=Text(input.Message,"Message",500,true);var link=Text(input.Link,"Link",200,true);if(!link.StartsWith('/')||link.StartsWith("//"))throw new ApiError(422,"A relative link is required.");
+ await using var db=Db();await db.ExecuteAsync("INSERT IGNORE INTO notifications(event_id,user_id,title,message,link,created_at) VALUES(@EventId,@UserId,@Title,@Message,@Link,@Now)",new{EventId=eventId,input.UserId,Title=title,Message=message,Link=link,Now=DateTimeOffset.UtcNow.ToString("O")});return Results.Ok(new{delivered=true});
+});
+var api=app.MapGroup("/api/notifications").RequireAuthorization();
+api.MapGet("",async(ClaimsPrincipal u,int? limit,int? offset)=>{int take=limit??100;int skip=offset??0;if(take<1||take>200||skip<0)throw new ApiError(422,"Choose a limit from 1 to 200 and a positive offset.");await using var db=Db();return await db.QueryAsync<Notification>($"SELECT {fields} FROM notifications WHERE user_id=@UserId ORDER BY id DESC LIMIT @Take OFFSET @Skip",new{UserId=u.UserId(),Take=take,Skip=skip});});
+api.MapGet("/unread-count",async(ClaimsPrincipal u)=>{await using var db=Db();return new{count=await db.ExecuteScalarAsync<long>("SELECT COUNT(*) FROM notifications WHERE user_id=@UserId AND is_read=FALSE",new{UserId=u.UserId()})};});
+api.MapPut("/read-all",async(ClaimsPrincipal u)=>{await using var db=Db();await db.ExecuteAsync("UPDATE notifications SET is_read=TRUE WHERE user_id=@UserId",new{UserId=u.UserId()});return Results.NoContent();});
+api.MapPut("/{id:long}/read",async(long id,ClaimsPrincipal u)=>{await using var db=Db();var record=await db.QuerySingleOrDefaultAsync<Notification>($"SELECT {fields} FROM notifications WHERE id=@Id AND user_id=@UserId",new{Id=id,UserId=u.UserId()});if(record==null)throw new ApiError(404,"Notification not found.");await db.ExecuteAsync("UPDATE notifications SET is_read=TRUE WHERE id=@Id AND user_id=@UserId",new{Id=id,UserId=u.UserId()});return Results.NoContent();});
+api.MapDelete("/{id:long}",async(long id,ClaimsPrincipal u)=>{await using var db=Db();var count=await db.ExecuteAsync("DELETE FROM notifications WHERE id=@Id AND user_id=@UserId",new{Id=id,UserId=u.UserId()});if(count==0)throw new ApiError(404,"Notification not found.");return Results.NoContent();});
 app.Run();
+record NotificationInput(string EventId,long UserId,string Title,string Message,string Link);
+record Notification(long Id,long UserId,string Title,string Message,string Link,bool IsRead,string CreatedAt);

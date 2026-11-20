@@ -1,16 +1,15 @@
-# React + Vite
+﻿# Teamflow frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React 19, React Router, Axios, Zustand, Tailwind CSS and Vite.
 
-Currently, two official plugins are available:
+Start the full backend and Nginx from the repository root with `docker compose up -d --build`.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```powershell
+npm.cmd ci
+npm.cmd run dev
+npm.cmd run build
+```
 
-## React Compiler
+Development runs at http://localhost:5173. Vite proxies all API requests to Nginx at http://localhost:8080. The Docker frontend is a compiled build served by Nginx, not a development server.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Features are grouped under `src/features/`; shared UI, authenticated HTTP requests, hooks and session state live under `src/shared/`. See the root README for OAuth configuration, optional admin provisioning, API tests and sample data.

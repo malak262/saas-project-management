@@ -1,0 +1,15 @@
+CREATE TABLE IF NOT EXISTS accounts (
+ id BIGINT AUTO_INCREMENT PRIMARY KEY,
+ email VARCHAR(254) NOT NULL UNIQUE,
+ name VARCHAR(100) NOT NULL,
+ password_hash VARCHAR(100),
+ provider VARCHAR(20),
+ provider_id VARCHAR(255),
+ role VARCHAR(20) NOT NULL DEFAULT 'MEMBER',
+ UNIQUE(provider, provider_id)
+);
+CREATE TABLE IF NOT EXISTS login_codes (
+ code_hash VARCHAR(64) PRIMARY KEY,
+ user_id BIGINT NOT NULL,
+ expires_at BIGINT NOT NULL
+);

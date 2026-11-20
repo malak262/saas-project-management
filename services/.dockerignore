@@ -1,0 +1,12 @@
+**/bin
+**/obj
+**/target
+**/vendor
+**/var
+**/.env*
+**/.git
+**/Preparation
+!workspace-service/bin
+!workspace-service/bin/*.php
+!task-service/bin
+!task-service/bin/*.php
